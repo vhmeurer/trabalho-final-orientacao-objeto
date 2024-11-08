@@ -1,0 +1,2 @@
+1;João;Cliente;joao123;senha123
+2;Maria;Bibliotecario;maria456;senha456
