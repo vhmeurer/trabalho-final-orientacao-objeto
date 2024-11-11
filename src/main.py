@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 from SistemaBiblioteca import SistemaBiblioteca
 from models.Emprestimo import Emprestimo
 
@@ -79,17 +81,20 @@ def main():
                         print("Você já emprestou este livro.")
                     else:
                         codigo_emprestimo = str(len(sistema.emprestimos) + 1)
-                        data_emprestimo = "2024-11-05"
+                        data_emprestimo = date.today()
+                        data_devolucao = data_emprestimo + timedelta(days=7)
                         novo_emprestimo = Emprestimo(
                             codigo_emprestimo,
                             sistema.usuario_logado.codigo,
                             livro_encontrado.codigo,
                             data_emprestimo,
+                            data_devolucao
                         )
                         sistema.emprestimos.append(novo_emprestimo)
                         print(
                             f"Empréstimo realizado com sucesso! "
-                            f"Código do empréstimo: {codigo_emprestimo}"
+                            f"Código do empréstimo: {codigo_emprestimo} "
+                            f"Devolução para o dia: {data_devolucao.strftime('%d/%m/%Y')}"
                         )
                 else:
                     print("Livro não encontrado.")
