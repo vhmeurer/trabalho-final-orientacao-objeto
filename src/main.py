@@ -3,7 +3,7 @@ from datetime import date, timedelta
 
 from SistemaBiblioteca import SistemaBiblioteca
 from models.Emprestimo import Emprestimo
-from src.models.Livro import Livro
+from models.Livro import Livro
 
 
 def exibir_menu():
@@ -12,7 +12,8 @@ def exibir_menu():
     print("2. Visualizar Livros Disponíveis")
     print("3. Fazer Empréstimo")
     print("4. Cadastrar Livro")
-    print("5. Sair")
+    print("5. Sobre")
+    print("6. Sair")
 
 
 def livro_ja_emprestado(sistema, codigo_livro):
@@ -26,7 +27,7 @@ def livro_ja_emprestado(sistema, codigo_livro):
 
 def main():
     sistema = SistemaBiblioteca()
-    print("Bem-vindo ao Sistema da Biblioteca!\n")
+    print("Bem-vindo ao BW Library, o seu Sistema da Biblioteca !\n")
 
     login = input("Digite o login: ")
     senha = input("Digite a senha: ")
@@ -116,10 +117,14 @@ def main():
                     livro.salvar_livro()
                     print("Livro cadastrado com sucesso!")
                     break
-
+                
             elif escolha == "5":
+                print("Na BookWorms, acreditamos no poder transformador da leitura e do conhecimento. Fundada por um grupo de apaixonados por tecnologia e literatura, nossa missão é conectar pessoas ao universo dos livros por meio de soluções inovadoras e acessíveis.\nCombinando expertise em desenvolvimento de software com um profundo respeito pelo papel das bibliotecas na sociedade, criamos o BW Library, um sistema de empréstimos de livros projetado para simplificar a gestão e melhorar a experiência dos leitores.\nNosso compromisso é empoderar bibliotecas a alcançarem mais leitores, oferecendo ferramentas tecnológicas que promovem a eficiência, a inclusão e a cultura. Com cada projeto, buscamos reforçar nosso propósito: unir tecnologia e conhecimento para um futuro melhor.\nVenha fazer parte dessa jornada com a gente!\n\nDesenvolvido por:\nGabriel Mazilão Ferreira da Silva\nJoão Pedro Dutra Coutinho\nJoão Victor Alves Campos\nLuiz Eduardo Ferreira Netto\nRuan de Toledo Barros Lamarca\nVictor Hugo Meurer Ribeiro")
+
+            elif escolha == "6":
                 print("Saindo do sistema. Até logo!")
                 break
+            
 
             else:
                 print("Opção inválida. Tente novamente.")
