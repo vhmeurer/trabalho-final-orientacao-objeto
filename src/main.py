@@ -48,7 +48,7 @@ def main():
                         print(
                             f"Código Empréstimo: {emprestimo.codigo}, "
                             f"Código Livro: {emprestimo.codigo_livro}, "
-                            f"Data: {emprestimo.data}"
+                            f"Data de Devolução: {emprestimo.data_devolucao}"
                         )
                 if not any(
                     emprestimo.codigo_usuario == sistema.usuario_logado.codigo
